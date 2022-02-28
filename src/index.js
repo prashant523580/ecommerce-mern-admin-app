@@ -7,14 +7,15 @@ import {Provider} from "react-redux";
 import store from "./store";
 window.store = store;
 ReactDOM.render(
-  <Provider store={store}>
-
+  
   <BrowserRouter>
+  <Provider store={store}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </Provider>
   </BrowserRouter>
-  </Provider>,
+  ,
   document.getElementById('root')
 );
 

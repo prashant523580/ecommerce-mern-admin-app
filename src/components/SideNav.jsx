@@ -8,7 +8,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import PagesIcon from '@mui/icons-material/Pages';
 const Sidenav = (props) => {
-    const [menuWidth,setMenuWidth] = useState(50);
+    const [menuWidth,setMenuWidth] = useState(7);
     const [rotate,setRotate] = useState(0)
     const [linkText,setLinkText] = useState("none");
     // console.log(items);
@@ -39,23 +39,23 @@ const Sidenav = (props) => {
         }
     ];
     const toggleMenu = ()  => {
-        if(menuWidth === 50){
-            setMenuWidth(250);
+        if(menuWidth === 7){
+            setMenuWidth(25);
             setLinkText("block");
             setRotate(180);
         }else{
             setLinkText("none");
-            setMenuWidth(50);
+            setMenuWidth(7);
             setRotate(360);
         }
     }
     return(
         <>
-        <div className="side-nav">
+        <div className="side-nav" style={{width: menuWidth + "vmin"}}>
             <div className="menu-icon">
                 <ArrowForwardIosIcon onClick={toggleMenu} style={{transform:`rotate(${rotate}deg)`}} /> 
             </div>
-            <div className="nav-links" style={{width:menuWidth+"px"}}>
+            <div className="nav-links" >
 
             {
                 navlinks.map((navlink,ind) => {

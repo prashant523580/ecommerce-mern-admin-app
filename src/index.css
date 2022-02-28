@@ -10,17 +10,19 @@
   --bg: rgb(129, 156, 156);
   --form-bg:#0f5a5a;
   --body-bg: rgb(18, 72, 119);
-  --danger: rgb(170, 2, 2);
+  --danger: rgb(124, 0, 0);
   --warning: orange;
   --light: white;
   --dark: #555555;
   --alert: orange;
   --info: rgb(128, 170, 184);
+  --success: rgb(6, 156, 167);
 }
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* height: 100%;

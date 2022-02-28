@@ -6,28 +6,28 @@ const initState = {
 
 }
 
-const order = (state = initState,action) => {
+export default (state = initState,action) => {
     switch(action.type){
-        // case orderConstant.UPDATE_ORDER_REQUEST:
-        //     state={
-        //         ...state,
-        //         loading:true
-        //     }
-        //     break;
-        // case orderConstant.UPDATE_ORDER_SUCCESS:
-        //     state={
-        //         ...state,
-        //         order: action.payload.orders,
-        //         loading: false
-        //     }
-        //     break;
-        // case orderConstant.UPDATE_ORDER_FAILURE:
-        //     state={
-        //         ...initState,
-        //         error: action.payload.error,
-        //         loading: false
-        //     }
-            // break; 
+        case orderConstant.UPDATE_ORDER_REQUEST:
+            state={
+                ...state,
+                loading:true
+            }
+            break;
+        case orderConstant.UPDATE_ORDER_SUCCESS:
+            state={
+                ...state,
+                order: action.payload.orders,
+                loading: false
+            }
+            break;
+        case orderConstant.UPDATE_ORDER_FAILURE:
+            state={
+                ...initState,
+                error: action.payload.error,
+                loading: false
+            }
+            break; 
             case orderConstant.GET_ORDER_REQUEST:
             state={
                 ...state,
@@ -51,5 +51,3 @@ const order = (state = initState,action) => {
         }
         return state;
 }
-
-export default order;

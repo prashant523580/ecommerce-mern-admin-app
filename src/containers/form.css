@@ -3,7 +3,7 @@
     min-width: 110vmin;
     /* height: 90vmin; */
     margin: auto auto;
-    background-color:var(--form-bg);
+    background-color:var(--success);
     padding: 1rem 1rem;
     display: flex;
     justify-content: space-around;
@@ -16,6 +16,7 @@
     top: 50%;
     z-index: 9999;
     transform: translate(-50%,-50%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.466);
     animation: slide-form .3s linear;
 
   }
@@ -57,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin: .3rem .3rem; */
+    margin: .6rem .3rem;
   }
   .form-group label{
     text-transform: capitalize;
@@ -87,8 +88,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: rgb(248, 252, 255);
     border-radius: .2rem;
     transition:  .3s ease;
@@ -122,18 +123,18 @@
     border-width: 0 3px 3px 0;
   }
   .form-container  .form .form-input{
-    padding: .1rem .3rem;
-    outline: 0;
-    border: 0;
-    border-radius: 4px;
+    padding: .3rem .6rem;
+    
+    border-radius: 1px;
   }
   .form-input:focus{
-    box-shadow:inset 0 -3px 0px 0 gray;
+    box-shadow:inset 0 -3px 0px 0 rgb(2, 101, 167);
   }
   .btn-content  .form-btn{
-    background-color: #063358;
+    background-color: #024983;
     text-transform: capitalize;
     padding: .5rem .6rem;
+    font-size: 2.5vmin;
     float: right;
     clear: both;
     border-radius: 4px;
@@ -141,14 +142,15 @@
     letter-spacing: 1px;
     border: 0;
     transition: .1s ease;
+    margin: 0 .3vmin;
   }
   .form-btn:hover{
     background-color: rgb(4, 58, 80);
-    box-shadow: 0px 2px 100px 1px rgb(250, 250, 250);
+    /* box-shadow: 0px 1px 20px 0px rgba(17, 14, 14, 0.699); */
   }
   .form-btn:active{
     transform: translateY(2px);
-    box-shadow: 0 0 2px 1px rgb(243, 240, 240);
+    /* box-shadow: 0 0 2px 1px rgba(48, 44, 44, 0.685); */
   
   }
   .form-link{

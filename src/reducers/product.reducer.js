@@ -5,7 +5,7 @@ const initialState = {
     loading: false,
     error: null
 }
-const product = (state = initialState,action) => {
+export default (state = initialState,action) => {
     switch(action.type){
         case productsConstants.GET_ALL_PRODUCTS_SUCCESS:
             state = {
@@ -36,5 +36,3 @@ const product = (state = initialState,action) => {
     }
     return state;
 };
-
-export default  product;

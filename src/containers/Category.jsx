@@ -216,7 +216,7 @@ const Category = () => {
                                 </div>
                                 <input type="file" name="categoryImage" onChange={handleCategoryImage} />
                                 <div className="buttons">
-                                    <div className="form-btn" onClick={() => setToggleCategoryForm("none")}>cancel</div>
+                                    <button className="form-btn" onClick={() => setToggleCategoryForm("none")}>cancel</button>
                                     <button className='form-btn' type="submit">submit</button>
                                 </div>
                             </form>
@@ -284,7 +284,7 @@ const Category = () => {
                                     }
 
                                     <div className="buttons">
-                                        <div className="form-btn" onClick={() => setUpdateCategoryModal(false)}>cancel</div>
+                                        <button className="form-btn" onClick={() => setUpdateCategoryModal(false)}>cancel</button>
                                         <button className='form-btn' type="submit">submit</button>
                                     </div>
                                 </form>

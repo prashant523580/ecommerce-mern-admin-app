@@ -147,8 +147,11 @@ const Products = () => {
                 <div className="main-form-container fade-in">
                     <div className="main-container">
                         <div className="page-header">
-                            <h2>product</h2>
+                            <h1>product</h1>
+                            <div className="buttons">
+
                             <button className="btn" onClick={() => setToggleFormProduct("block")}>add products</button>
+                            </div>
                         </div>
                         <div className="modal-form" style={{ display: toggleFormProduct }}>
                             <form action="" onSubmit={handleCreateProductForm}>
@@ -208,8 +211,8 @@ const Products = () => {
                                         AllProducts.products.map((product, ind) =>
                                         <tr  key={product._id}>
                                                 <td>{ind}</td>
-                                                <td onClick={() => showProductsDetails(product)}>{product.name}</td>
-                                                <td >{product.price}</td>
+                                                <td onClick={() => showProductsDetails(product)}>{product.name} </td>
+                                                <td> {product.price}</td>
                                                 <td>{product.quantity}</td>
                                                 <td>{product.category.name}</td>
                                                 <td><button onClick={updateProduct}> edit</button> </td>

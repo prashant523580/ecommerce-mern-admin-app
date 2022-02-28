@@ -10,16 +10,17 @@ const Orders = () => {
     const dispatch = useDispatch();
     const [orders, setOrders] = useState([]);
     const [user, setUser] = useState([]);
-    const[type,setType] = useState();
+    const [type, setType] = useState();
     const [userOrderEmailDetails, setUserOrderEmailDetails] = useState();
     const slide = useRef();
     useEffect(() => {
-        const payload = {
-            orderId: "23jsd2222224redacded2ca5ad2d35d"
-        }
+        // const payload = {
+        //     orderId: "23jsd2222224redacded2ca5ad2d35d"
+        // }
         // dispatch(updateUserOrder(payload));
         // dispatch(getUserOrder());
     }, []);
+    console.log(order)
     useEffect(() => {
         if (order.order) {
             setOrders(order.order)
@@ -55,30 +56,28 @@ const Orders = () => {
                 return order
             }
         })
-        setUserOrderEmailDetails(orderCategories);    
-        slide.current.style.transform = `translateX(-${1*100}%   )`
+        setUserOrderEmailDetails(orderCategories);
+        slide.current.style.transform = `translateX(-${1 * 100}%   )`
     }
-    console.log(slide.current)
     const formatDate = (date) => {
-        if(date){
+        if (date) {
 
             let d = new Date(date);
-            let days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
+            let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
             return `${d.getMonth()}-${d.getDate()}-${d.getFullYear()}
                       ${days[d.getDay()]}`;
         }
         return ''
     }
     const returnPage = () => {
-        
-        slide.current.style.transform = `translateX(-${0*100}%   )`
+
+        slide.current.style.transform = `translateX(-${0 * 100}%   )`
     }
     const orderUpdate = (id) => {
         const payload = {
             type,
             orderId: id
         }
-        console.log(payload)
         dispatch(updateUserOrder(payload));
     }
     const renderOrderDetails = () => {
@@ -87,8 +86,10 @@ const Orders = () => {
         }
         return (
             <div className="orderDetails-container column-order">
-                <button onClick={returnPage} style={{position:"absolute",
-                left:"0",top:"0", zIndex:"9999999"}}>back</button>
+                <button onClick={returnPage} style={{
+                    position: "absolute",
+                    left: "0", top: "0", zIndex: "9999999"
+                }}>back</button>
                 <div className="orderDetail-body">
                     {
                         userOrderEmailDetails.map((ord, ind) => {
@@ -96,49 +97,47 @@ const Orders = () => {
                             return (
                                 <div className="order-card" key={ind}>
                                     <div className="card-header">
-                                        <div> 
-                                        <p>payment Status: {ord.paymentStatus}</p>
-                                        <p> payment Type: {ord.paymentType} </p>
+                                        <div>
+                                            <p>payment Status: {ord.paymentStatus}</p>
+                                            <p> payment Type: {ord.paymentType} </p>
                                         </div>
                                         <div>
                                             <select onChange={(e) => setType(e.target.value)}>
                                                 <option value={''}> select status</option>
                                                 {
-                                                    ord.orderStatus.map((status,ind) => {
-                                                        return(
+                                                    ord.orderStatus.map((status, ind) => {
+                                                        return (
                                                             <>{
-                                                                !status.isCompleted ? 
-                                                                <option key={ind} value={status.type}> {status.type}</option> : null
+                                                                !status.isCompleted ?
+                                                                    <option key={ind} value={status.type}> {status.type}</option> : null
                                                             }
                                                             </>
                                                         )
                                                     })
-                                                }    
+                                                }
                                             </select> &nbsp;
-                                            <button onClick={() => orderUpdate(ord._id)}>confirm</button> 
-                                         </div>
+                                            <button onClick={() => orderUpdate(ord._id)}>confirm</button>
+                                        </div>
                                     </div>
                                     <div className="order-card-body">
-
-
                                         <div className='addressId'> {ord.addressId} </div>
                                         <div>
-                                            {ord.items.map((item, ind) => {
-                                                console.log(item)
-                                                return (<div key={ind} className='item-details'>
-                                                    <div className="order-detail">
+                                            {ord.items && ord.items.map((item, ind) => {
+                                                return (
+                                                    <div key={ind} className='item-details'>
+                                                        <div className="order-detail">
 
-                                                    <p> Product Name  : {item.productId.name.split(" ",3)} </p>
-                                                    <p> Price : {item.payablePrice} </p>
-                                                    <p> Total Amount  : {item.payablePrice * item.purchasedQuantity} </p>
-                                                    <p> Total Quantity : {item.purchasedQuantity} </p>
-                                                    </div>
-                                                    <div className="order-detail">
-                                                        <div className="img-content">
-                                                            <img src={generateImgUrl(item.productId.productPicture[0].img)} alt="" />
+                                                            <p> Product Name  : {item.productId.name.split(" ", 3)} </p>
+                                                            <p> Price : {item.payablePrice} </p>
+                                                            <p> Total Amount  : {item.payablePrice * item.purchasedQuantity} </p>
+                                                            <p> Total Quantity : {item.purchasedQuantity} </p>
                                                         </div>
-                                                    </div>
-                                                </div>)
+                                                        <div className="order-detail">
+                                                            <div className="img-content">
+                                                                <img src={generateImgUrl(item.productId.productPicture[0].img)} alt={item.productId.name} />
+                                                            </div>
+                                                        </div>
+                                                    </div>)
                                             })}
                                         </div>
                                         <div className="item-track" style={{ display: 'flex' }}>
@@ -172,27 +171,39 @@ const Orders = () => {
             <div className="page-container">
 
                 <Sidenav />
-                <div className="container-order">
-                    <div ref={slide} className="row-order">
 
-                        <div className="column-order users">
-                            {/* <div className="user-header">users</div> */}
-                            <div className="user-body">
-
-                                {
-                                    user && user.map((mail, ind) => {
-                                        return (
-
-                                            <div key={ind} className="user">
-                                                <p data-mail={mail} onClick={submitUserMail}>{mail}</p>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                <div className="main-container">
+                    <div className="page-header">
+                        <h1> order page </h1>
+                        <div className="buttons">
+                            {/* <button className="btn" onClick={() => setShowModal(true)}>create page</button> */}
                         </div>
-                        {renderOrderDetails()}
+                    </div>
 
+
+
+                    <div className="container-order">
+                        <div ref={slide} className="row-order">
+
+                            <div className="column-order users">
+                                {/* <div className="user-header">users</div> */}
+                                <div className="user-body">
+
+                                    {
+                                        user && user.map((mail, ind) => {
+                                            return (
+
+                                                <div key={ind} className="user">
+                                                    <p data-mail={mail} onClick={submitUserMail}>{mail}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            {renderOrderDetails()}
+
+                        </div>
                     </div>
                 </div>
 

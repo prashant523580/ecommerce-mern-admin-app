@@ -13,7 +13,8 @@
     overflow-y: auto;
     animation: slide- .3s ease;
     z-index: 99999999;
-    /* background-color: rgba(115, 129, 133, 0.414); */
+    overflow-y: auto;
+    background-color: rgba(115, 129, 133, 0.414);
     
   }
  @keyframes slide- {
@@ -37,8 +38,7 @@
     width: auto;
     min-width: 60vmin;
     max-width: 120vmin;
-    margin: auto;
-
+    /* margin: auto; */
     margin: auto auto;
     padding: .3rem .6rem;
     border-radius: .3rem;
@@ -78,16 +78,18 @@
   
   }
  .modal-form-update  form  .form-group{
-  margin-left: 15px;
+  /* margin-left: 15px; */
+  margin: .3rem 0;
 }
+
  form .form-input,
 form .form-group .form-input{
-  margin: .2rem .4rem;
+  margin: .2vmin .4vmin;
   /* width: 50%; */
   border-radius: .2rem;
   outline: 0;
   border: 0;
-  padding: .7vmin .10vmin;
+  padding: .7vmin 1vmin;
 }
 .modal-form form .buttons,
 
@@ -99,18 +101,19 @@ form .form-group .buttons {
 }
  .modal-form form .buttons .form-btn,
  form .form-group .buttons .form-btn{
-  background-color: black;
+  background-color: green;
   text-align: center;
   text-transform: capitalize;
   color: white;
-  padding: .8vmin 1vmin;
+  padding: 1.8vmin 1vmin;
   outline: 0;
   border: 0;
-  width: 49%;
+  width: 48%;
   cursor: pointer;
 }
 .modal-form form .buttons .form-btn:first-child{
   background-color: rgb(233, 40, 6);
+  text-align: center;
 }
  form >.form-group {
   display: flex;

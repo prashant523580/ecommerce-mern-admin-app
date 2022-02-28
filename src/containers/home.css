@@ -4,3 +4,12 @@
 .fade-in{
     /* height: 1400px; */
 }
+h1,h2{
+    text-transform: capitalize;
+    font-size: 5.5vmin;
+}
+h4,h3
+{
+    font-size: 4.5vmin;
+    text-transform: capitalize;
+}

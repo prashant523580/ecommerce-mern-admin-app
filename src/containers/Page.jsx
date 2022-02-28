@@ -130,8 +130,8 @@ const Pages = () => {
                     </div>
                 </div>
                 <div className="buttons">
-                    <div className="form-btn" onClick={() => setShowModal(false)}>cancle</div>
-                    <div className="form-btn" onClick={submitCreatePage}>submit</div>
+                    <button className="form-btn" onClick={() => setShowModal(false)}>cancle</button>
+                    <button className="form-btn" onClick={submitCreatePage}>submit</button>
                 </div>
             </Modal>
 

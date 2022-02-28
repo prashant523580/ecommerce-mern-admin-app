@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import {Navbar,Nav,NavDropdown} from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import {NavLink} from "react-router-dom";
 import { signout } from "../actions";

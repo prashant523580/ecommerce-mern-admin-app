@@ -5,6 +5,7 @@ const initState = {
     message : "",
     loading: false
 }
+
 export default (state = initState, action) => {
     switch(action.type){
         case userConstants.USER_REGISTER_REQUEST:
