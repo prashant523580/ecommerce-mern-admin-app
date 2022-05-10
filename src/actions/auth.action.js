@@ -1,5 +1,4 @@
-import axios from "../helpers/axios"
-import { api } from "../urlConfig"
+import axios from "../helpers/axios";
 import { authConstants } from "./constant"
 
 export const login = (user) => {
@@ -66,19 +65,14 @@ export const isUserLoggedIn = () => {
 export const signout = () => {
     return async dispatch => {
         dispatch({ type: authConstants.LOGOUT_REQUEST })
-        const res = await fetch(api + "/admin/signout", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
+        const res = await axios.post("/admin/signout");
         console.log(res)
         if (res.status === 200) {
-
             localStorage.clear();
             dispatch({
                 type: authConstants.LOGOUT_SUCCESS
             })
+
         } else {
             dispatch({
                 type: authConstants.LOGOUT_FAILURE,

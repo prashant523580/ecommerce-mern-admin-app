@@ -19,17 +19,18 @@ const NavBars = (props) => {
     let logoutLocalStorage =  localStorage.getItem("token");
     // console.log(logoutLocalStorage)
     const logOutUser = () => {
+       
         dispatch(signout())
         // localStorage.clear()
     }
     const RenderMenuLoginUser = () => {
             return (
                 <>
-                   {/* <NavLink exact activeClassName="active" className="nav-link" to="/">home</NavLink>
+                   <NavLink exact activeClassName="active" className="nav-link" to="/">home</NavLink>
                 <NavLink exact activeClassName="active" className="nav-link" to="/category">Category</NavLink>
                 <NavLink exact activeClassName="active" className="nav-link" to="/products">products</NavLink>
                 <NavLink exact activeClassName="active" className="nav-link" to="/orders">orders</NavLink>
-                           */}
+                          
                 <span  className="nav-link" onClick={logOutUser}>logout</span>            
                  </>
                 )

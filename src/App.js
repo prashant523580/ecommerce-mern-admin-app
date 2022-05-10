@@ -24,15 +24,15 @@ function App() {
 
         dispatch(isUserLoggedIn());
       
-    }
-    
-    
-  }, [auth.authenticate]); // componentDidUpdate
-  
-  useEffect(() => {
-  dispatch(getInitialData())
+      }
+      
+      
+    }, [auth.authenticate]); // componentDidUpdate
+    useEffect(() => {
+      
+      dispatch(getInitialData())
+  })
 
-},[])
   return (
       <>     
           <Navbar/>
