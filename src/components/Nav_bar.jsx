@@ -25,12 +25,7 @@ const NavBars = (props) => {
     }
     const RenderMenuLoginUser = () => {
             return (
-                <>
-                   <NavLink exact activeClassName="active" className="nav-link" to="/">home</NavLink>
-                <NavLink exact activeClassName="active" className="nav-link" to="/category">Category</NavLink>
-                <NavLink exact activeClassName="active" className="nav-link" to="/products">products</NavLink>
-                <NavLink exact activeClassName="active" className="nav-link" to="/orders">orders</NavLink>
-                          
+                <>         
                 <span  className="nav-link" onClick={logOutUser}>logout</span>            
                  </>
                 )

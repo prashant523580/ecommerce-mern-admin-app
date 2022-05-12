@@ -4,26 +4,26 @@
 }
 .page-container .main-container .page-header{
   width: 100%;
-  padding:1.3rem;
+  padding:12px 14px;
   display: flex;
   justify-content: space-between ;
-  box-shadow: 0 0 30px 1px rgba(4, 17, 12, 0.412);
+  box-shadow: 0 5px 20px 1px rgba(4, 17, 12, 0.412);
 }
 .page-container  .page-header h1{
 color: rgb(5, 97, 28);
 }
-.page-container .page-header .buttons .btn{
+.page-container .buttons .btn{
   color: rgb(211, 216, 224);
   background-color: rgba(1, 1, 77, 0.842);
   text-transform: capitalize;
   transition: .2s ease;
-  font-size: 2.5vmin;
-  padding: 1.2vmin .9vmin;
+  
+  padding: 8px 10px;
   margin: 0 .3vmin;
   cursor: pointer;
 }
 .category-list{
-  padding: 2vmin 1vmin;
+  padding: 10px 12px;
 }
 /* .page-container .main-container .btn:hover{
   background-color: rgb(0, 0, 0);

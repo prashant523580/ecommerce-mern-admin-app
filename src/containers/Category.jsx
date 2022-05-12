@@ -185,12 +185,7 @@ const Category = () => {
                     <div className="main-container">
                         <div className="page-header">
                             <h1>Category</h1>
-                            <div className="buttons">
-
-                                <button className="btn" onClick={() => setToggleCategoryForm("block")}>add category</button>
-                                <button className='btn' onClick={deleteCategoryUpdate}>delete</button>
-                                <button className='btn' onClick={updateCategories}>edit</button>
-                            </div>
+                            
                         </div>
                         <div className="modal-form" style={{ display: toggleCategoryForm }}>
                             <form onSubmit={handleCreateCategoryForm}>
@@ -310,7 +305,12 @@ const Category = () => {
                             {renderDeleteCategoryForm()}
                         </div>
                     </div>
+			<div className="buttons">
 
+                                <button className="btn" onClick={() => setToggleCategoryForm("block")}>add category</button>
+                                <button className='btn' onClick={deleteCategoryUpdate}>delete</button>
+                                <button className='btn' onClick={updateCategories}>edit</button>
+                            </div>
                 </div>
             </div>
         </>
